@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<style type="text/css">
+			fieldset {background: lightyellow;
+			 border: 10px solid yellow;
+			 margin-bottom: 10px;
+			 width: 720px}
+			label {width: 180px;
+			text-align: right;
+			text-align: top;
+			display: inline-block}
+			#height {width: auto}
+			#salary {width: auto}
+			#contact {width: auto}
+			span {text-align: center;}
+			textarea {width: 360px;
+			height: 50px}
+
+			label:hover {font-size: 25px;}
+			input:hover {font-size: 25px;}
+
+		</style>
+	</head>
+	<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+	<body>
+		<h1>Please Enter Your Details For Our Dating Website!</h1><br>
+		<form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Your Face</legend>
+				<label for="image">Your image:</label>
+				<input type="file" id="image" name="fileToUpload" required><br>
+				<label for="preview">Image preview:</label>
+				<img id="preview" id="preview"/><br>
+			</fieldset>
+			<fieldset>
+				<legend>Your general details</legend>
+				<label for="name">Name:</label> 
+				<input type="text" id="name" name="name" placeholder="Your full name" required><br>
+				<label for="gender">Gender:</label>
+				<input type="radio" id="gender" name="gender" required>Male
+				<input type="radio" id="gender" name="gender" required>Female<br>
+				<label for="age">Age:</label>
+				<input type="number" id="age" name="age" required><br>
+				<label for="birth">Date of birth:</label>
+				<input type="date" id="birth" name="birth"><br>
+				<label for="colour"> Favorite color:<label>
+				<input type="color" id="color" name="color"><br>
+				<label for="country"> Which country:<label>
+				<select id="country">
+					<option value="No selection">No selection</option>
+					<option value="France">France</option>
+					<option value="Corsica">Corsica</option>
+					<option value="USA">USA</option>
+					<option value="China">China</option>
+					<option value="Russia">Russia</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Your indicators</legend>
+				<label for="height"> Height:<label>
+				<span>Short</span><input type="range" id="height" name="height" min="0" max="100"><span>Tall</span><br>
+				<label for="salary"> Salary:<label>
+				<span>Poor</span><input type="range" id="salary" name="salary" min="0" max="100"><span>Rich</span><br>
+			</fieldset>
+			<fieldset>
+				<legend>Your Contact Information</legend>
+				<label for="email"> Email:<label>
+				<input type="email" id="email" name="email" required><br>
+				<label for="mobile"> Mobile:<label>
+				<input type="tel" id="mobile" name="mobile"><br>
+				<label for="address"> Address:<label>
+				<textarea id="address" name="address" rows="2" cols="15" ></textarea><br>
+				<label for="contact"> Method to contact you:<label>
+				<input type="checkbox" id="contact" name="contact" value="email">Email
+				<input type="checkbox" id="contact" name="contact" value="whatsapp">Whatsapp
+				<input type="checkbox" id="contact" name="contact" value="inappchat">In-app chat<br>
+			</fieldset>
+			<input type="submit" value="submit">
+		</form>
+	</body>
+</html>

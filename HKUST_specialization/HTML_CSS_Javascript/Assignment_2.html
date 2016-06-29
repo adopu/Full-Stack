@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 2: Javascript Intro</title>
+	</head>
+	<body onload="do_game()">
+		<script type="text/javascript">
+			var target
+			var guess_input_text;
+			var finished = false;
+			var guesses = 0;
+			var colors = ["blue", "black", "pink", "red", "orange", "yellow", "green", "grey", "brown"]
+			
+			function do_game(){
+				target = colors[Math.floor(Math.random() * colors.length)];
+				alert("The color is " + target)
+				while (!finished){
+					guess_input_text = prompt("I am thinking of a color in that list: \n" + colors.sort().join() + "\n\n" + "What is the color?");
+					guesses += 1;
+					finished = check_guess();
+				}
+			}
+
+			function check_guess(){
+				if (!colors.includes(guess_input_text)) {
+					alert("I do not recognize your color. \n" + "Please enter a color of the list.");
+					return false;
+				}
+				if (guess_input_text > target){
+					alert("Your color is alphabetically higher than mine!");
+					return false;
+				}
+				if (guess_input_text < target){
+					alert("Your color is alphabetically lower than mine!");
+					return false;
+				}
+				document.getElementsByTagName("body")[0].style.background = target;
+				alert("Your got it! The color I'm thinking of is " + target + ".\n\n It took you " + guesses + " guesses to find out!");
+				return true;
+			}
+		</script>
+	</body>
+</html>
